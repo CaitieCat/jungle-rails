@@ -10,6 +10,7 @@ RSpec.describe User, type: :model do
     # validation tests/examples here
     it "is not valid without a name" do
       user.name = nil
+      puts user.name
       expect(user).not_to be_valid
     end
     it "is not valid without an email" do
