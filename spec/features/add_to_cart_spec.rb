@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "ProductDetails", type: :feature, js: true do
+RSpec.feature "AddToCarts", type: :feature, js: true do
   before :each do
     @category = Category.create! name: 'Apparel'
 
@@ -15,10 +15,10 @@ RSpec.feature "ProductDetails", type: :feature, js: true do
     end
   end
 
-  scenario "They see product details" do
+  scenario "A product is added to the cart" do
     # ACT
-    visit product_path
-
+    visit root_path
+    click_button('Add to cart')
     # DEBUG
     save_screenshot
 
